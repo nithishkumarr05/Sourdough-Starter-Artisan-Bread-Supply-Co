@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Login | The Sourdough Lab – Artisan Bread Supply Co.</title>
+    <link rel="icon" href="assests/fav.jpeg" type="image/jpeg">
+    <meta name="description"
+        content="Log in to your Sourdough Lab account — manage your Bread Club membership, track orders, save favorites, and access exclusive content.">
+
+    <!-- Tailwind CSS + Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'sourdough-gold': '#C9A03D',
+                        'sourdough-deep': '#8B5E3C',
+                        'sourdough-cream': '#FDF8F0',
+                        'sourdough-warm': '#F5E6D3',
+                        'sourdough-brown': '#5C3A21',
+                        'sourdough-dark': '#2C1810',
+                        'sourdough-crust': '#D4A373',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        'widest-xl': '0.3em',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Gourmet bread background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1586444248902-2f64eddc13df?q=80&w=2070&auto=format');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.3;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.7) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .login-container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(2px);
+            border-radius: 32px;
+            padding: 36px 32px;
+            text-align: center;
+            box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(201, 160, 61, 0.3);
+            transition: all 0.3s ease;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+        }
+
+        .login-card::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        .login-card::-webkit-scrollbar-track {
+            background: #e0e0e0;
+            border-radius: 10px;
+        }
+
+        .login-card::-webkit-scrollbar-thumb {
+            background: #C9A03D;
+            border-radius: 10px;
+        }
+
+        .dark .login-card {
+            background: rgba(18, 18, 18, 0.96);
+            border-color: rgba(201, 160, 61, 0.4);
+        }
+
+        .dark .login-card::-webkit-scrollbar-track {
+            background: #2a2a2a;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #374151;
+            margin-bottom: 6px;
+        }
+
+        .dark .form-group label {
+            color: #d1d5db;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #1a1a1a;
+            background: #f9fafb;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .dark .form-group input {
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .form-group input::placeholder {
+            color: #9ca3af;
+            font-weight: 400;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #C9A03D;
+            box-shadow: 0 0 0 2px rgba(201, 160, 61, 0.25);
+        }
+
+        .password-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .password-wrapper input {
+            padding-right: 44px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #9ca3af;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 6px;
+            transition: color 0.2s;
+        }
+
+        .toggle-password:hover {
+            color: #C9A03D;
+        }
+
+        .forgot-link {
+            text-align: right;
+            margin-top: -8px;
+            margin-bottom: 20px;
+        }
+
+        .forgot-link a {
+            font-size: 11px;
+            color: #C9A03D;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .forgot-link a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background: #C9A03D;
+            border: none;
+            border-radius: 40px;
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-family: 'Inter', sans-serif;
+            transition: background 0.2s, transform 0.05s;
+        }
+
+        .btn-login:hover {
+            background: #8B5E3C;
+        }
+
+        .btn-login:active {
+            transform: scale(0.98);
+        }
+
+        .divider {
+            text-align: center;
+            margin: 20px 0 20px;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+            background: #e0e0e0;
+        }
+
+        .dark .divider::before {
+            background: #333;
+        }
+
+        .divider span {
+            position: relative;
+            background: #ffffff;
+            padding: 0 12px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .dark .divider span {
+            background: #121212;
+            color: #777;
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .social-btn {
+            flex: 1;
+            height: 44px;
+            border-radius: 40px;
+            border: 1px solid #e0e0e0;
+            background: #ffffff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+            transition: all 0.2s;
+        }
+
+        .dark .social-btn {
+            background: #1e1e1e;
+            border-color: #333;
+            color: #ddd;
+        }
+
+        .social-btn:hover {
+            border-color: #C9A03D;
+            transform: translateY(-1px);
+        }
+
+        .social-btn i {
+            font-size: 14px;
+        }
+
+        .social-btn.google i {
+            color: #DB4437;
+        }
+
+        .social-btn.facebook i {
+            color: #1877F2;
+        }
+
+        .social-btn.apple i {
+            color: #000;
+        }
+
+        .dark .social-btn.apple i {
+            color: #fff;
+        }
+
+        .signup-link {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
+        }
+
+        .dark .signup-link {
+            border-top-color: #2a2a2a;
+            color: #aaa;
+        }
+
+        .signup-link a {
+            color: #C9A03D;
+            text-decoration: none;
+            font-weight: 700;
+            margin-left: 5px;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo a {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            font-style: italic;
+            text-decoration: none;
+        }
+
+        .logo a span {
+            color: #C9A03D;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .title h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 6px;
+        }
+
+        .dark .title h1 {
+            color: #ffffff;
+        }
+
+        .title p {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .dark .title p {
+            color: #aaa;
+        }
+
+        .top-controls {
+            position: fixed;
+            top: 18px;
+            right: 18px;
+            display: flex;
+            gap: 10px;
+            z-index: 200;
+        }
+
+        .control-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(20, 20, 24, 0.72);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(201, 160, 61, 0.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #f5f0e6;
+            font-size: 16px;
+            transition: 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .control-btn:hover {
+            background: #C9A03D;
+            border-color: rgba(201, 160, 61, 0.8);
+            transform: scale(1.02);
+            color: white;
+        }
+
+        .dark .control-btn {
+            background: rgba(0, 0, 0, 0.65);
+            border-color: rgba(201, 160, 61, 0.7);
+        }
+
+        .dark .control-btn:hover {
+            background: #C9A03D;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #C9A03D;
+            color: white;
+            padding: 10px 22px;
+            border-radius: 60px;
+            font-size: 12px;
+            font-weight: 700;
+            z-index: 300;
+            animation: toastFade 2.5s ease forwards;
+            white-space: nowrap;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+            pointer-events: none;
+        }
+
+        @keyframes toastFade {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+
+            12% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+
+            88% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-6px);
+                visibility: hidden;
+            }
+        }
+
+        [dir="rtl"] .top-controls {
+            right: auto;
+            left: 18px;
+        }
+
+        [dir="rtl"] .password-wrapper input {
+            padding-right: 14px;
+            padding-left: 44px;
+        }
+
+        [dir="rtl"] .toggle-password {
+            right: auto;
+            left: 12px;
+        }
+
+        [dir="rtl"] .forgot-link {
+            text-align: left;
+        }
+
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 28px 24px;
+            }
+
+            .title h1 {
+                font-size: 22px;
+            }
+
+            .logo a {
+                font-size: 24px;
+            }
+
+            .social-btn {
+                height: 40px;
+                font-size: 11px;
+            }
+
+            .btn-login {
+                padding: 10px;
+            }
+
+            .top-controls {
+                top: 12px;
+                right: 12px;
+            }
+
+            .control-btn {
+                width: 38px;
+                height: 38px;
+                font-size: 14px;
+            }
+
+            [dir="rtl"] .top-controls {
+                right: auto;
+                left: 12px;
+            }
+        }
+
+        @media (max-height: 650px) {
+            .login-card {
+                padding: 20px 24px;
+                max-height: 95vh;
+            }
+
+            .title {
+                margin-bottom: 16px;
+            }
+
+            .title h1 {
+                font-size: 20px;
+            }
+
+            .form-group {
+                margin-bottom: 12px;
+            }
+
+            .form-group input {
+                padding: 9px 12px;
+                font-size: 12px;
+            }
+
+            .social-login {
+                margin-bottom: 16px;
+            }
+
+            .social-btn {
+                height: 36px;
+            }
+
+            .btn-login {
+                margin-bottom: 14px;
+                padding: 9px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-controls">
+        <button class="control-btn" id="themeToggle" title="Toggle Theme"><i class="fas fa-moon"
+                id="themeIcon"></i></button>
+        <button class="control-btn" id="rtlToggle" title="Toggle RTL Layout"><i
+                class="fas fa-exchange-alt"></i></button>
+    </div>
+
+    <div class="login-container">
+        <div class="login-card animate-fade-up">
+            <div class="logo">
+                <a href="index.html"><span>Sourdough</span><span>Lab</span></a>
+            </div>
+            <div class="title">
+                <h1>Welcome Back</h1>
+                <p>Log in to your account</p>
+            </div>
+
+            <div class="social-login">
+                <button class="social-btn google" id="googleLogin"><i
+                        class="fab fa-google"></i><span>Google</span></button>
+                <button class="social-btn facebook" id="facebookLogin"><i
+                        class="fab fa-facebook-f"></i><span>Facebook</span></button>
+                <button class="social-btn apple" id="appleLogin"><i class="fab fa-apple"></i><span>Apple</span></button>
+            </div>
+
+            <div class="divider"><span>Or continue with email</span></div>
+
+            <form id="loginForm" novalidate>
+                <div class="form-group">
+                    <label>EMAIL ADDRESS</label>
+                    <input type="email" id="email" placeholder="hello@sourdoughlab.com" autocomplete="email" required>
+                </div>
+                <div class="form-group">
+                    <label>PASSWORD</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" placeholder="Enter your password"
+                            autocomplete="current-password" required>
+                        <button type="button" class="toggle-password" data-target="password"><i
+                                class="fas fa-eye-slash"></i></button>
+                    </div>
+                </div>
+                <div class="forgot-link"><a href="#">Forgot password?</a></div>
+                <button type="submit" class="btn-login">Log In</button>
+            </form>
+
+            <div class="signup-link">
+                Don't have an account? <a href="signup.html">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showToast(message) {
+            const existingToast = document.querySelector('.toast');
+            if (existingToast) existingToast.remove();
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            setTimeout(() => { if (toast && toast.parentNode) toast.remove(); }, 2600);
+        }
+
+        // Password visibility toggle
+        document.querySelectorAll('.toggle-password').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const input = document.getElementById(btn.getAttribute('data-target'));
+                const icon = btn.querySelector('i');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.className = 'fas fa-eye';
+                } else {
+                    input.type = 'password';
+                    icon.className = 'fas fa-eye-slash';
+                }
+            });
+        });
+
+        // Dark Mode
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+
+        function updateThemeIcon() {
+            if (html.classList.contains('dark')) {
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+            }
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+                updateThemeIcon();
+                showToast(html.classList.contains('dark') ? 'Dark mode activated' : 'Light mode activated');
+            });
+        }
+
+        if (localStorage.getItem('theme') === 'dark') html.classList.add('dark');
+        updateThemeIcon();
+
+        // RTL Toggle
+        const rtlToggle = document.getElementById('rtlToggle');
+        if (rtlToggle) {
+            rtlToggle.addEventListener('click', () => {
+                if (document.documentElement.getAttribute('dir') === 'rtl') {
+                    document.documentElement.removeAttribute('dir');
+                    localStorage.setItem('dir', 'ltr');
+                    showToast('Layout set to LTR');
+                } else {
+                    document.documentElement.setAttribute('dir', 'rtl');
+                    localStorage.setItem('dir', 'rtl');
+                    showToast('Layout set to RTL');
+                }
+            });
+        }
+        if (localStorage.getItem('dir') === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+
+        // Social login handlers
+        const socialHandlers = { google: 'Google', facebook: 'Facebook', apple: 'Apple' };
+        Object.keys(socialHandlers).forEach(provider => {
+            const btn = document.getElementById(`${provider}Login`);
+            if (btn) {
+                btn.addEventListener('click', () => showToast(`${socialHandlers[provider]} login — coming soon`));
+            }
+        });
+
+        // Form submission
+        const loginForm = document.getElementById('loginForm');
+        if (loginForm) {
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value;
+                if (!email) return showToast('Please enter your email address');
+                if (!password) return showToast('Please enter your password');
+                if (email === 'demo@sourdoughlab.com' || email === 'hello@sourdoughlab.com') {
+                    showToast(`Welcome back! Redirecting to your account...`);
+                } else {
+                    showToast(`Logged in successfully! Welcome back.`);
+                }
+            });
+        }
+
+        // Prevent body scroll
+        document.body.addEventListener('wheel', (e) => { e.preventDefault(); }, { passive: false });
+        document.body.addEventListener('touchmove', (e) => { e.preventDefault(); }, { passive: false });
+        const loginCard = document.querySelector('.login-card');
+        if (loginCard) {
+            loginCard.addEventListener('wheel', (e) => { e.stopPropagation(); });
+            loginCard.addEventListener('touchmove', (e) => { e.stopPropagation(); });
+        }
+    </script>
+</body>
+
+</html>
