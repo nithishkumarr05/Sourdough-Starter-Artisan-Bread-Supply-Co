@@ -339,14 +339,9 @@
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
             <img src="assests/bread.jpeg" alt="Artisan Sourdough Bakery Background"
-                class="w-full h-full object-cover opacity-15 dark:opacity-10 mix-blend-overlay">
-            <div class="absolute inset-0 opacity-5 dark:opacity-10">
-                <svg class="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50,100 Q80,70 110,100 T170,100" stroke="#C9A03D" fill="none" stroke-width="2" />
-                    <path d="M30,130 Q60,100 90,130 T150,130" stroke="#C9A03D" fill="none" stroke-width="2" />
-                    <path d="M70,70 Q100,40 130,70" stroke="#C9A03D" fill="none" stroke-width="2" />
-                </svg>
-            </div>
+                class="w-full h-full object-cover opacity-60">
+            <!-- Dark gradient overlay for text readability -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
         </div>
         <div class="relative z-10 text-center px-5 max-w-5xl mx-auto">
             <div class="inline-flex items-center gap-3 mb-6 animate-fade-up opacity-0" style="animation-delay: 0.1s;">
@@ -356,7 +351,7 @@
                     Starters • Artisan Flours</span>
                 <span class="w-12 h-[1px] bg-sourdough-gold"></span>
             </div>
-            <h1 class="text-5xl sm:text-7xl md:text-8xl font-serif font-black text-sourdough-dark dark:text-sourdough-warm leading-[1.05] mb-6 animate-fade-up opacity-0"
+            <h1 class="text-5xl sm:text-7xl md:text-8xl font-serif font-black text-white leading-[1.05] mb-6 animate-fade-up opacity-0"
                 style="animation-delay: 0.3s;">
                 Born from <br><span class="text-sourdough-gold italic">Wild Yeast.</span>
             </h1>
