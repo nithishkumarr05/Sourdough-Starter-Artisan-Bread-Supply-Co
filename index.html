@@ -23,7 +23,7 @@
                 extend: {
                     colors: {
                         'sourdough-gold': '#C9A03D',
-                        'sourdough-deep': '#8B5E3C',
+                        'sourdough-deep': '#4A2E1B',
                         'sourdough-cream': '#FDF8F0',
                         'sourdough-warm': '#F5E6D3',
                         'sourdough-brown': '#5C3A21',
@@ -179,11 +179,7 @@
 <body
     class="bg-sourdough-cream text-sourdough-dark dark:bg-sourdough-dark dark:text-sourdough-warm font-sans antialiased">
 
-    <!-- Floating wheat decorations -->
-    <div class="floating-particle text-3xl left-[3%] top-[20%] animate-float" style="animation-delay: 0s;">🌾</div>
-    <div class="floating-particle text-2xl right-[5%] top-[30%] animate-float" style="animation-delay: 2s;">🍞</div>
-    <div class="floating-particle text-xl left-[8%] bottom-[25%] animate-float" style="animation-delay: 4s;">🥖</div>
-    <div class="floating-particle text-2xl right-[10%] bottom-[35%] animate-float" style="animation-delay: 1s;">🌾</div>
+
 
     <!-- HEADER - Updated Navigation -->
     <nav
@@ -252,8 +248,8 @@
                         <i class="fas fa-exchange-alt text-sourdough-gold text-sm"></i>
                     </button>
                     <a href="login.html"
-                        class="flex items-center gap-2 text-sourdough-dark dark:text-sourdough-warm hover:text-sourdough-gold transition font-medium text-sm">
-                        <i class="fas fa-user-circle text-lg"></i> Login
+                        class="flex items-center gap-2 border border-sourdough-gold text-sourdough-gold hover:bg-sourdough-gold hover:text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition shadow-sm">
+                        <i class="fas fa-user-circle text-sm"></i> Login
                     </a>
                     <a href="signup.html"
                         class="flex items-center gap-2 bg-sourdough-gold hover:bg-sourdough-deep text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition shadow-md">
@@ -315,17 +311,17 @@
                     <div class="grid grid-cols-2 gap-3 mb-4">
                         <button id="mobileThemeToggle"
                             class="bg-sourdough-gold/10 dark:bg-sourdough-gold/20 px-4 py-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 text-sourdough-dark dark:text-sourdough-warm"><i
-                                class="fas fa-moon"></i> Dark/Light</button>
+                                class="fas fa-moon text-sm"></i> Dark/Light</button>
                         <button id="mobileRtlToggle"
                             class="bg-sourdough-gold/10 dark:bg-sourdough-gold/20 px-4 py-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 text-sourdough-dark dark:text-sourdough-warm"><i
-                                class="fas fa-exchange-alt"></i> RTL</button>
+                                class="fas fa-exchange-alt text-sm"></i> RTL</button>
                     </div>
                     <a href="login.html"
-                        class="flex items-center justify-center gap-2 bg-sourdough-dark text-white text-center px-4 py-3.5 rounded-xl text-sm font-semibold uppercase"><i
-                            class="fas fa-user-circle"></i> Login</a>
+                        class="flex items-center justify-center gap-2 border border-sourdough-gold text-sourdough-gold hover:bg-sourdough-gold hover:text-white text-center px-4 py-3.5 rounded-xl text-sm font-semibold uppercase transition"><i
+                            class="fas fa-user-circle text-sm"></i> Login</a>
                     <a href="signup.html"
                         class="flex items-center justify-center gap-2 mt-3 bg-sourdough-gold text-white text-center px-4 py-3.5 rounded-xl text-sm font-semibold uppercase"><i
-                            class="fas fa-user-plus"></i> Sign Up</a>
+                            class="fas fa-user-plus text-sm"></i> Sign Up</a>
                 </div>
             </div>
         </div>
@@ -334,12 +330,17 @@
     <!-- SECTION 1: HERO - Artisan Sourdough -->
     <section
         class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-br from-sourdough-cream via-sourdough-warm to-sourdough-cream dark:from-sourdough-dark dark:via-sourdough-brown/20 dark:to-sourdough-dark">
-        <div class="absolute inset-0 opacity-5">
-            <svg class="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path d="M50,100 Q80,70 110,100 T170,100" stroke="#C9A03D" fill="none" stroke-width="2" />
-                <path d="M30,130 Q60,100 90,130 T150,130" stroke="#C9A03D" fill="none" stroke-width="2" />
-                <path d="M70,70 Q100,40 130,70" stroke="#C9A03D" fill="none" stroke-width="2" />
-            </svg>
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="assests/bread.jpeg" alt="Artisan Sourdough Bakery Background"
+                class="w-full h-full object-cover opacity-15 dark:opacity-10 mix-blend-overlay">
+            <div class="absolute inset-0 opacity-5 dark:opacity-10">
+                <svg class="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50,100 Q80,70 110,100 T170,100" stroke="#C9A03D" fill="none" stroke-width="2" />
+                    <path d="M30,130 Q60,100 90,130 T150,130" stroke="#C9A03D" fill="none" stroke-width="2" />
+                    <path d="M70,70 Q100,40 130,70" stroke="#C9A03D" fill="none" stroke-width="2" />
+                </svg>
+            </div>
         </div>
         <div class="relative z-10 text-center px-5 max-w-5xl mx-auto">
             <div class="inline-flex items-center gap-3 mb-6 animate-fade-up opacity-0" style="animation-delay: 0.1s;">
@@ -370,51 +371,74 @@
         </div>
     </section>
 
-    <!-- SECTION 2: Our Living Cultures (3 Cards) -->
-    <section class="py-24 lg:py-32 bg-white dark:bg-sourdough-dark/50">
-        <div class="max-w-7xl mx-auto px-5">
-            <div class="text-center mb-14">
-                <span class="text-sourdough-gold text-[10px] tracking-[0.4em] font-bold block mb-3 font-sans">Living
-                    Cultures</span>
-                <h2 class="text-3xl md:text-5xl font-serif font-bold text-sourdough-dark dark:text-sourdough-warm">
-                    Heirloom Starters. Generations
-                    Old.</h2>
-                <div class="w-20 h-[2px] bg-sourdough-gold mx-auto mt-5"></div>
+    <!-- SECTION 1.5: Stats Bar (Moved from Section 5) -->
+    <section
+        class="py-12 bg-white/80 dark:bg-sourdough-dark/60 border-y border-sourdough-gold/20 relative z-10 backdrop-blur-sm shadow-sm">
+        <div class="max-w-5xl mx-auto px-5">
+            <div class="grid grid-cols-3 gap-6 text-center">
+                <div class="stat-card">
+                    <div class="text-3xl md:text-4xl font-serif font-black text-sourdough-gold">500+</div>
+                    <p
+                        class="text-[10px] md:text-xs uppercase tracking-[0.2em] mt-2 font-bold text-sourdough-deep dark:text-sourdough-warm/70">
+                        Active Members</p>
+                </div>
+                <div class="stat-card">
+                    <div class="text-3xl md:text-4xl font-serif font-black text-sourdough-gold">12</div>
+                    <p
+                        class="text-[10px] md:text-xs uppercase tracking-[0.2em] mt-2 font-bold text-sourdough-deep dark:text-sourdough-warm/70">
+                        Flavors / Year</p>
+                </div>
+                <div class="stat-card">
+                    <div class="text-3xl md:text-4xl font-serif font-black text-sourdough-gold">$39</div>
+                    <p
+                        class="text-[10px] md:text-xs uppercase tracking-[0.2em] mt-2 font-bold text-sourdough-deep dark:text-sourdough-warm/70">
+                        Monthly Box</p>
+                </div>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div
-                    class="group text-center p-6 rounded-2xl hover:shadow-xl transition-all duration-300 bg-sourdough-warm/30 dark:bg-sourdough-brown/10">
-                    <div
-                        class="w-20 h-20 bg-sourdough-gold/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-sourdough-gold/20 transition">
-                        <i class="fas fa-seedling text-3xl text-sourdough-gold"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl font-bold mb-2 dark:text-sourdough-warm">San Francisco '68</h3>
-                    <p class="text-sourdough-deep dark:text-sourdough-warm/70 text-sm">Over 55 years old — tangy
-                        complexity, reliable rise, and deep
-                        flavor.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: The Art of Artisan Bread (Text Content Section) -->
+    <section class="py-24 lg:py-32 bg-white dark:bg-sourdough-dark/50">
+        <div class="max-w-4xl mx-auto px-5 text-center">
+            <span class="text-sourdough-gold text-[10px] tracking-[0.4em] font-bold block mb-3 font-sans uppercase">The Craft of Baking</span>
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-sourdough-dark dark:text-sourdough-warm mb-6 leading-tight">
+                Artisan Bread. A Labor of Love & Time.
+            </h2>
+            <div class="w-20 h-[2px] bg-sourdough-gold mx-auto mb-8"></div>
+            <p class="text-sourdough-deep dark:text-sourdough-warm/80 leading-relaxed mb-8 max-w-2xl mx-auto text-base md:text-lg">
+                Sourdough breadmaking is an ancient art. By using heritage flour, purified water, sea salt, and patience, we allow wild yeast to ferment slowly. This natural process breaks down gluten and starches, unlocking deep rustic flavors, a tender open crumb, and a crisp, caramelized crust.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8 text-left mt-12">
+                <div class="p-6 rounded-xl bg-sourdough-warm/20 dark:bg-sourdough-brown/10 border border-sourdough-gold/10">
+                    <h4 class="font-serif font-bold text-lg text-sourdough-dark dark:text-sourdough-warm mb-3">
+                        I. Wild Fermentation
+                    </h4>
+                    <p class="text-sm text-sourdough-deep dark:text-sourdough-warm/70 leading-relaxed">
+                        Captured from natural microflora, wild yeast is nurtured daily to establish a robust ecosystem for active rise and complex flavor.
+                    </p>
                 </div>
-                <div
-                    class="group text-center p-6 rounded-2xl hover:shadow-xl transition-all duration-300 bg-sourdough-warm/30 dark:bg-sourdough-brown/10 transform md:-translate-y-3">
-                    <div
-                        class="w-20 h-20 bg-sourdough-gold/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-sourdough-gold/20 transition">
-                        <i class="fas fa-wheat-alt text-3xl text-sourdough-gold"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl font-bold mb-2 dark:text-sourdough-warm">Italian Pasta Madre</h3>
-                    <p class="text-sourdough-deep dark:text-sourdough-warm/70 text-sm">Sweet, nutty profile — perfect
-                        for panettone and enriched
-                        doughs.</p>
+                <div class="p-6 rounded-xl bg-sourdough-warm/20 dark:bg-sourdough-brown/10 border border-sourdough-gold/10">
+                    <h4 class="font-serif font-bold text-lg text-sourdough-dark dark:text-sourdough-warm mb-3">
+                        II. Cold Proofing
+                    </h4>
+                    <p class="text-sm text-sourdough-deep dark:text-sourdough-warm/70 leading-relaxed">
+                        Fermenting the shaped dough slowly in low temperatures for 24–48 hours, yielding a deep, sour, and digestible profile.
+                    </p>
                 </div>
-                <div
-                    class="group text-center p-6 rounded-2xl hover:shadow-xl transition-all duration-300 bg-sourdough-warm/30 dark:bg-sourdough-brown/10">
-                    <div
-                        class="w-20 h-20 bg-sourdough-gold/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-sourdough-gold/20 transition">
-                        <i class="fas fa-globe-americas text-3xl text-sourdough-gold"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl font-bold mb-2 dark:text-sourdough-warm">Wild Oregon '22</h3>
-                    <p class="text-sourdough-deep dark:text-sourdough-warm/70 text-sm">Foraged from Willamette Valley
-                        grapes — bright, fruity,
-                        aromatic notes.</p>
+                <div class="p-6 rounded-xl bg-sourdough-warm/20 dark:bg-sourdough-brown/10 border border-sourdough-gold/10">
+                    <h4 class="font-serif font-bold text-lg text-sourdough-dark dark:text-sourdough-warm mb-3">
+                        III. High Hydration
+                    </h4>
+                    <p class="text-sm text-sourdough-deep dark:text-sourdough-warm/70 leading-relaxed">
+                        Increasing the dough's water percentage to develop a highly irregular, open, and custardy crumb texture.
+                    </p>
                 </div>
+            </div>
+            <div class="mt-10">
+                <a href="#" class="inline-flex items-center gap-2 text-sourdough-gold border-b-2 border-sourdough-gold pb-1 font-semibold uppercase tracking-wider text-xs hover:text-sourdough-deep transition">
+                    Explore Our Baking Guides →
+                </a>
             </div>
         </div>
     </section>
@@ -447,55 +471,55 @@
                         Our Flours →</a>
                 </div>
                 <div class="order-1 lg:order-2">
-                    <img src="assests/index1.png" alt="Fresh milled flour"
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80"
+                        alt="Organic Stone-Ground Flour"
                         class="rounded-2xl shadow-2xl w-full object-cover hover:scale-105 transition duration-700">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 4: The Artisan's Toolkit -->
+    <!-- SECTION 4: The Artisan's Toolkit (3-Column Layout with Local Assets) -->
     <section class="py-24 lg:py-32 bg-white dark:bg-sourdough-dark/50">
         <div class="max-w-7xl mx-auto px-5">
             <div class="text-center mb-12">
-                <span class="text-sourdough-gold text-[10px] tracking-[0.4em] font-bold block mb-3">Essential
-                    Tools</span>
-                <h2 class="text-3xl md:text-5xl font-serif font-bold text-sourdough-dark dark:text-sourdough-warm">The
-                    Artisan's Toolkit</h2>
+                <span class="text-sourdough-gold text-[10px] tracking-[0.4em] font-bold block mb-3 font-sans uppercase">Essential Tools</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-sourdough-dark dark:text-sourdough-warm">The Artisan's Toolkit</h2>
             </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div
-                    class="bg-sourdough-warm/20 dark:bg-sourdough-brown/10 p-5 rounded-xl text-center hover:bg-sourdough-warm/40 dark:hover:bg-sourdough-brown/20 transition">
-                    <i class="fas fa-bread-slice text-3xl text-sourdough-gold mb-3"></i>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1: Banneton Baskets -->
+                <div class="group bg-sourdough-warm/20 dark:bg-sourdough-brown/10 p-6 rounded-xl text-center hover:bg-sourdough-warm/40 dark:hover:bg-sourdough-brown/20 transition overflow-hidden">
+                    <div class="w-full h-48 rounded-lg overflow-hidden mb-4 border border-sourdough-gold/20">
+                        <img src="assests/shp7.jpg" alt="Banneton Baskets" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
                     <h3 class="font-bold text-lg mb-1 dark:text-sourdough-warm">Banneton Baskets</h3>
-                    <p class="text-xs text-sourdough-deep dark:text-sourdough-warm/70">Handcrafted cane proofing baskets
-                    </p><span class="inline-block mt-2 text-sourdough-gold font-bold">$32</span>
+                    <p class="text-xs text-sourdough-deep dark:text-sourdough-warm/70">Handcrafted cane proofing baskets for professional shapes.</p>
+                    <span class="inline-block mt-3 text-sourdough-gold font-bold">$32</span>
                 </div>
-                <div
-                    class="bg-sourdough-warm/20 dark:bg-sourdough-brown/10 p-5 rounded-xl text-center hover:bg-sourdough-warm/40 dark:hover:bg-sourdough-brown/20 transition">
-                    <i class="fas fa-kitchen-set text-3xl text-sourdough-gold mb-3"></i>
+                <!-- Card 2: Dutch Ovens -->
+                <div class="group bg-sourdough-warm/20 dark:bg-sourdough-brown/10 p-6 rounded-xl text-center hover:bg-sourdough-warm/40 dark:hover:bg-sourdough-brown/20 transition overflow-hidden">
+                    <div class="w-full h-48 rounded-lg overflow-hidden mb-4 border border-sourdough-gold/20">
+                        <img src="assests/shp5.jpg" alt="Dutch Ovens" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
                     <h3 class="font-bold text-lg mb-1 dark:text-sourdough-warm">Dutch Ovens</h3>
-                    <p class="text-xs text-sourdough-deep dark:text-sourdough-warm/70">Cast iron for perfect steam crust
-                    </p><span class="inline-block mt-2 text-sourdough-gold font-bold">$89</span>
+                    <p class="text-xs text-sourdough-deep dark:text-sourdough-warm/70">Heavy-duty cast iron for trapping heat and steam.</p>
+                    <span class="inline-block mt-3 text-sourdough-gold font-bold">$89</span>
                 </div>
-                <div
-                    class="bg-sourdough-warm/20 dark:bg-sourdough-brown/10 p-5 rounded-xl text-center hover:bg-sourdough-warm/40 dark:hover:bg-sourdough-brown/20 transition">
-                    <i class="fas fa-grip-lines text-3xl text-sourdough-gold mb-3"></i>
-                    <h3 class="font-bold text-lg mb-1 dark:text-sourdough-warm">Lame & Scoring Kit</h3>
-                    <p class="text-xs text-sourdough-deep dark:text-sourdough-warm/70">Precision scoring tools</p><span
-                        class="inline-block mt-2 text-sourdough-gold font-bold">$24</span>
-                </div>
-                <div
-                    class="bg-sourdough-warm/20 dark:bg-sourdough-brown/10 p-5 rounded-xl text-center hover:bg-sourdough-warm/40 dark:hover:bg-sourdough-brown/20 transition">
-                    <i class="fas fa-scale-balanced text-3xl text-sourdough-gold mb-3"></i>
-                    <h3 class="font-bold text-lg mb-1 dark:text-sourdough-warm">Digital Scale</h3>
-                    <p class="text-xs text-sourdough-deep dark:text-sourdough-warm/70">Accurate to 0.1g for perfect
-                        hydration</p><span class="inline-block mt-2 text-sourdough-gold font-bold">$28</span>
+                <!-- Card 3: Artisan Gift Sets -->
+                <div class="group bg-sourdough-warm/20 dark:bg-sourdough-brown/10 p-6 rounded-xl text-center hover:bg-sourdough-warm/40 dark:hover:bg-sourdough-brown/20 transition overflow-hidden">
+                    <div class="w-full h-48 rounded-lg overflow-hidden mb-4 border border-sourdough-gold/20">
+                        <img src="assests/shp4.jpg" alt="Artisan Gift Sets" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <h3 class="font-bold text-lg mb-1 dark:text-sourdough-warm">Artisan Gift Sets</h3>
+                    <p class="text-xs text-sourdough-deep dark:text-sourdough-warm/70">A complete, curated starter kit for home bread makers.</p>
+                    <span class="inline-block mt-3 text-sourdough-gold font-bold">$95</span>
                 </div>
             </div>
-            <div class="text-center mt-10"><a href="#"
-                    class="inline-block bg-sourdough-dark dark:bg-sourdough-gold hover:bg-sourdough-gold dark:hover:bg-sourdough-deep text-white px-8 py-3 rounded-full text-xs uppercase tracking-widest font-bold transition shadow-md">View
-                    Full Collection →</a></div>
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block bg-sourdough-dark dark:bg-sourdough-gold hover:bg-sourdough-gold dark:hover:bg-sourdough-deep text-white px-8 py-3 rounded-full text-xs uppercase tracking-widest font-bold transition shadow-md">
+                    View Full Collection →
+                </a>
+            </div>
         </div>
     </section>
 
@@ -507,20 +531,7 @@
             <p class="text-sourdough-deep dark:text-sourdough-warm/80 max-w-2xl mx-auto mb-8">Monthly curated boxes
                 featuring seasonal starters,
                 rare flours, and exclusive recipes. Skip, pause, or cancel anytime.</p>
-            <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto mb-10">
-                <div class="bg-white dark:bg-sourdough-dark/40 p-5 rounded-xl shadow-sm">
-                    <div class="text-2xl font-bold text-sourdough-gold">500+</div>
-                    <p class="text-xs uppercase tracking-wider dark:text-sourdough-warm/70">Active Members</p>
-                </div>
-                <div class="bg-white dark:bg-sourdough-dark/40 p-5 rounded-xl shadow-sm">
-                    <div class="text-2xl font-bold text-sourdough-gold">12</div>
-                    <p class="text-xs uppercase tracking-wider dark:text-sourdough-warm/70">Flavors / Year</p>
-                </div>
-                <div class="bg-white dark:bg-sourdough-dark/40 p-5 rounded-xl shadow-sm">
-                    <div class="text-2xl font-bold text-sourdough-gold">$39</div>
-                    <p class="text-xs uppercase tracking-wider dark:text-sourdough-warm/70">Monthly Box</p>
-                </div>
-            </div>
+
             <a href="#"
                 class="inline-flex items-center gap-2 bg-sourdough-gold hover:bg-sourdough-deep text-white px-8 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold transition shadow-md">Join
                 the Bread Club →</a>

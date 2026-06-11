@@ -23,7 +23,7 @@
                 extend: {
                     colors: {
                         'sourdough-gold': '#C9A03D',
-                        'sourdough-deep': '#8B5E3C',
+                        'sourdough-deep': '#4A2E1B',
                         'sourdough-cream': '#FDF8F0',
                         'sourdough-warm': '#F5E6D3',
                         'sourdough-brown': '#5C3A21',
@@ -245,17 +245,23 @@
 
                 <div class="hidden xl:flex items-center gap-3">
                     <button id="themeToggle"
-                        class="w-9 h-9 rounded-full border border-sourdough-gold/40 flex items-center justify-center hover:bg-sourdough-gold/10 transition"><i
-                            class="fas fa-moon text-sourdough-gold text-sm"></i></button>
+                        class="w-9 h-9 rounded-full border border-sourdough-gold/40 flex items-center justify-center hover:bg-sourdough-gold/10 transition"
+                        title="Toggle Theme">
+                        <i class="fas fa-moon text-sourdough-gold text-sm"></i>
+                    </button>
                     <button id="rtlToggle"
-                        class="w-9 h-9 rounded-full border border-sourdough-gold/40 flex items-center justify-center hover:bg-sourdough-gold/10 transition"><i
-                            class="fas fa-exchange-alt text-sourdough-gold text-sm"></i></button>
+                        class="w-9 h-9 rounded-full border border-sourdough-gold/40 flex items-center justify-center hover:bg-sourdough-gold/10 transition"
+                        title="RTL Mode">
+                        <i class="fas fa-exchange-alt text-sourdough-gold text-sm"></i>
+                    </button>
                     <a href="login.html"
-                        class="flex items-center gap-2 text-sourdough-dark dark:text-sourdough-warm hover:text-sourdough-gold transition font-medium text-sm"><i
-                            class="fas fa-user-circle text-lg"></i> Login</a>
+                        class="flex items-center gap-2 border border-sourdough-gold text-sourdough-gold hover:bg-sourdough-gold hover:text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition shadow-sm">
+                        <i class="fas fa-user-circle text-sm"></i> Login
+                    </a>
                     <a href="signup.html"
-                        class="flex items-center gap-2 bg-sourdough-gold hover:bg-sourdough-deep text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition shadow-md"><i
-                            class="fas fa-user-plus text-sm"></i> Sign Up</a>
+                        class="flex items-center gap-2 bg-sourdough-gold hover:bg-sourdough-deep text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition shadow-md">
+                        <i class="fas fa-user-plus text-sm"></i> Sign Up
+                    </a>
                 </div>
 
                 <div class="xl:hidden flex items-center gap-3">
@@ -307,18 +313,18 @@
                 <div class="pt-5 mt-5 border-t border-sourdough-gold/20">
                     <div class="grid grid-cols-2 gap-3 mb-4">
                         <button id="mobileThemeToggle"
-                            class="bg-sourdough-gold/10 dark:bg-sourdough-gold/20 px-4 py-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2"><i
-                                class="fas fa-moon"></i> Dark/Light</button>
+                            class="bg-sourdough-gold/10 dark:bg-sourdough-gold/20 px-4 py-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 text-sourdough-dark dark:text-sourdough-warm"><i
+                                class="fas fa-moon text-sm"></i> Dark/Light</button>
                         <button id="mobileRtlToggle"
-                            class="bg-sourdough-gold/10 dark:bg-sourdough-gold/20 px-4 py-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2"><i
-                                class="fas fa-exchange-alt"></i> RTL</button>
+                            class="bg-sourdough-gold/10 dark:bg-sourdough-gold/20 px-4 py-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 text-sourdough-dark dark:text-sourdough-warm"><i
+                                class="fas fa-exchange-alt text-sm"></i> RTL</button>
                     </div>
                     <a href="login.html"
-                        class="flex items-center justify-center gap-2 bg-sourdough-dark text-white text-center px-4 py-3.5 rounded-xl text-sm font-semibold uppercase"><i
-                            class="fas fa-user-circle"></i> Login</a>
+                        class="flex items-center justify-center gap-2 border border-sourdough-gold text-sourdough-gold hover:bg-sourdough-gold hover:text-white text-center px-4 py-3.5 rounded-xl text-sm font-semibold uppercase transition"><i
+                            class="fas fa-user-circle text-sm"></i> Login</a>
                     <a href="signup.html"
                         class="flex items-center justify-center gap-2 mt-3 bg-sourdough-gold text-white text-center px-4 py-3.5 rounded-xl text-sm font-semibold uppercase"><i
-                            class="fas fa-user-plus"></i> Sign Up</a>
+                            class="fas fa-user-plus text-sm"></i> Sign Up</a>
                 </div>
             </div>
         </div>
@@ -437,41 +443,41 @@
         </div>
     </section>
 
-    <!-- SECTION 4: The Artisan's Promise (Values Row) -->
+    <!-- SECTION 4: The Breadmaking Process (Text Content Section) -->
     <section class="py-24 lg:py-32 bg-white dark:bg-sourdough-dark/50">
-        <div class="max-w-7xl mx-auto px-5">
-            <div class="text-center mb-14"><span
-                    class="text-sourdough-gold text-[10px] tracking-[0.4em] font-bold block mb-3">Our Promise</span>
-                <h2 class="text-3xl md:text-5xl font-serif font-bold text-sourdough-dark dark:text-sourdough-warm">
-                    Crafted with Integrity</h2>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="p-6">
-                    <div
-                        class="w-20 h-20 bg-sourdough-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-seedling text-3xl text-sourdough-gold"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold mb-2">Regenerative Farming</h3>
-                    <p class="text-sm text-sourdough-deep">We partner with farms that rebuild soil health and sequester
-                        carbon — for better grain and a better planet.</p>
+        <div class="max-w-4xl mx-auto px-5 text-center">
+            <span class="text-sourdough-gold text-[10px] tracking-[0.4em] font-bold block mb-3 font-sans uppercase">Our Process</span>
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-sourdough-dark dark:text-sourdough-warm mb-6 leading-tight">
+                The Journey of the Loaf
+            </h2>
+            <div class="w-20 h-[2px] bg-sourdough-gold mx-auto mb-8"></div>
+            <p class="text-sourdough-deep dark:text-sourdough-warm/80 leading-relaxed mb-8 max-w-2xl mx-auto text-base md:text-lg">
+                Crafting true artisan sourdough is a slow, tactile art. By respecting time and temperature, we guide simple, organic ingredients into complex, nourishing loaves.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8 text-left mt-12">
+                <div class="p-6 rounded-xl bg-sourdough-warm/20 dark:bg-sourdough-brown/10 border border-sourdough-gold/10">
+                    <h4 class="font-serif font-bold text-lg text-sourdough-dark dark:text-sourdough-warm mb-3">
+                        I. Mixing & Autolyse
+                    </h4>
+                    <p class="text-xs text-sourdough-deep dark:text-sourdough-warm/70 leading-relaxed">
+                        Organic flour and water are combined to rest, allowing natural enzymes to activate and gluten strands to align before the starter is introduced.
+                    </p>
                 </div>
-                <div class="p-6">
-                    <div
-                        class="w-20 h-20 bg-sourdough-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-mortar-pestle text-3xl text-sourdough-gold"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold mb-2">Stone Ground Fresh</h3>
-                    <p class="text-sm text-sourdough-deep">Flour is milled weekly — never bleached, never enriched. Just
-                        pure, nutrient-dense grain.</p>
+                <div class="p-6 rounded-xl bg-sourdough-warm/20 dark:bg-sourdough-brown/10 border border-sourdough-gold/10">
+                    <h4 class="font-serif font-bold text-lg text-sourdough-dark dark:text-sourdough-warm mb-3">
+                        II. Long Fermentation
+                    </h4>
+                    <p class="text-xs text-sourdough-deep dark:text-sourdough-warm/70 leading-relaxed">
+                        A slow bulk fermentation with gentle stretch-and-folds builds air pockets, unlocking the deep flavor and easy digestibility of natural sourdough.
+                    </p>
                 </div>
-                <div class="p-6">
-                    <div
-                        class="w-20 h-20 bg-sourdough-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-hand-sparkles text-3xl text-sourdough-gold"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold mb-2">Heirloom Starters</h3>
-                    <p class="text-sm text-sourdough-deep">Our cultures are preserved, fed, and shipped with care — some
-                        over a century old.</p>
+                <div class="p-6 rounded-xl bg-sourdough-warm/20 dark:bg-sourdough-brown/10 border border-sourdough-gold/10">
+                    <h4 class="font-serif font-bold text-lg text-sourdough-dark dark:text-sourdough-warm mb-3">
+                        III. Scoring & Bake
+                    </h4>
+                    <p class="text-xs text-sourdough-deep dark:text-sourdough-warm/70 leading-relaxed">
+                        Each loaf is hand-scored to control its expansion, then baked on a hot hearth with steam for a blistered, golden-brown caramelized crust.
+                    </p>
                 </div>
             </div>
         </div>

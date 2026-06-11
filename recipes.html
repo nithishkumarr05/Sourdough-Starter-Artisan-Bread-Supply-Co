@@ -23,7 +23,7 @@
                 extend: {
                     colors: {
                         'sourdough-gold': '#C9A03D',
-                        'sourdough-deep': '#8B5E3C',
+                        'sourdough-deep': '#4A2E1B',
                         'sourdough-cream': '#FDF8F0',
                         'sourdough-warm': '#F5E6D3',
                         'sourdough-brown': '#5C3A21',
@@ -316,7 +316,7 @@
 
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
-            <img src="" alt="Artisan Sourdough Recipes"
+            <img src="assests/bread.jpeg" alt="Artisan Sourdough Recipes"
                 class="w-full h-full object-cover opacity-20 dark:opacity-10 mix-blend-overlay">
             <div class="absolute inset-0 opacity-10 dark:opacity-20">
                 <svg class="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -540,29 +540,37 @@
                     discard again — turn it into deliciousness.</p>
             </div>
             <div class="grid md:grid-cols-4 gap-5">
-                <div class="bg-sourdough-warm/20 dark:bg-sourdough-brown/10 p-5 rounded-xl text-center"><i
-                        class="fas fa-cookie-bite text-2xl text-sourdough-gold mb-2"></i>
-                    <h3 class="font-bold">Discard Pancakes</h3>
-                    <p class="text-xs text-sourdough-deep">Fluffy, tangy, perfect weekend breakfast</p><a href="#"
-                        class="text-sourdough-gold text-sm mt-2 inline-block">Get Recipe →</a>
+                <div class="flex flex-col justify-between items-center bg-sourdough-warm/20 dark:bg-sourdough-brown/10 p-5 rounded-xl text-center h-full">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-egg text-2xl text-sourdough-gold mb-3"></i>
+                        <h3 class="font-bold dark:text-sourdough-warm">Discard Pancakes</h3>
+                        <p class="text-xs text-sourdough-deep dark:text-sourdough-warm/75 mt-2">Fluffy, tangy, perfect weekend breakfast</p>
+                    </div>
+                    <a href="#" class="text-sourdough-gold hover:text-sourdough-deep text-sm font-semibold mt-4 transition-colors">Get Recipe →</a>
                 </div>
-                <div class="bg-sourdough-warm/20 dark:bg-sourdough-brown/10 p-5 rounded-xl text-center"><i
-                        class="fas fa-waffle text-2xl text-sourdough-gold mb-2"></i>
-                    <h3 class="font-bold">Sourdough Waffles</h3>
-                    <p class="text-xs text-sourdough-deep">Crispy outside, tender inside</p><a href="#"
-                        class="text-sourdough-gold text-sm mt-2 inline-block">Get Recipe →</a>
+                <div class="flex flex-col justify-between items-center bg-sourdough-warm/20 dark:bg-sourdough-brown/10 p-5 rounded-xl text-center h-full">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-stroopwafel text-2xl text-sourdough-gold mb-3"></i>
+                        <h3 class="font-bold dark:text-sourdough-warm">Sourdough Waffles</h3>
+                        <p class="text-xs text-sourdough-deep dark:text-sourdough-warm/75 mt-2">Crispy outside, tender inside</p>
+                    </div>
+                    <a href="#" class="text-sourdough-gold hover:text-sourdough-deep text-sm font-semibold mt-4 transition-colors">Get Recipe →</a>
                 </div>
-                <div class="bg-sourdough-warm/20 dark:bg-sourdough-brown/10 p-5 rounded-xl text-center"><i
-                        class="fas fa-muffin text-2xl text-sourdough-gold mb-2"></i>
-                    <h3 class="font-bold">Discard Muffins</h3>
-                    <p class="text-xs text-sourdough-deep">Blueberry, chocolate chip, or savory</p><a href="#"
-                        class="text-sourdough-gold text-sm mt-2 inline-block">Get Recipe →</a>
+                <div class="flex flex-col justify-between items-center bg-sourdough-warm/20 dark:bg-sourdough-brown/10 p-5 rounded-xl text-center h-full">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-cookie text-2xl text-sourdough-gold mb-3"></i>
+                        <h3 class="font-bold dark:text-sourdough-warm">Discard Muffins</h3>
+                        <p class="text-xs text-sourdough-deep dark:text-sourdough-warm/75 mt-2">Blueberry, chocolate chip, or savory</p>
+                    </div>
+                    <a href="#" class="text-sourdough-gold hover:text-sourdough-deep text-sm font-semibold mt-4 transition-colors">Get Recipe →</a>
                 </div>
-                <div class="bg-sourdough-warm/20 dark:bg-sourdough-brown/10 p-5 rounded-xl text-center"><i
-                        class="fas fa-pizza-slice text-2xl text-sourdough-gold mb-2"></i>
-                    <h3 class="font-bold">Quick Flatbreads</h3>
-                    <p class="text-xs text-sourdough-deep">Ready in 45 minutes</p><a href="#"
-                        class="text-sourdough-gold text-sm mt-2 inline-block">Get Recipe →</a>
+                <div class="flex flex-col justify-between items-center bg-sourdough-warm/20 dark:bg-sourdough-brown/10 p-5 rounded-xl text-center h-full">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-bread-slice text-2xl text-sourdough-gold mb-3"></i>
+                        <h3 class="font-bold dark:text-sourdough-warm">Quick Flatbreads</h3>
+                        <p class="text-xs text-sourdough-deep dark:text-sourdough-warm/75 mt-2">Ready in 45 minutes</p>
+                    </div>
+                    <a href="#" class="text-sourdough-gold hover:text-sourdough-gold/80 text-sm font-semibold mt-4 transition-colors">Get Recipe →</a>
                 </div>
             </div>
         </div>
@@ -575,18 +583,18 @@
             <i class="fas fa-share-alt text-3xl text-sourdough-gold mb-4"></i>
             <h2 class="text-3xl md:text-5xl font-serif font-bold text-sourdough-dark dark:text-sourdough-warm mb-4">
                 Share Your Recipe</h2>
-            <p class="text-sourdough-deep dark:text-sourdough-warm/80 max-w-2xl mx-auto mb-8">Have a sourdough creation
+            <p class="text-sourdough-dark/80 dark:text-sourdough-warm/80 max-w-2xl mx-auto mb-8">Have a sourdough creation
                 you're proud of? Submit your recipe for a chance to be featured in our monthly newsletter and on our
                 blog.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto mb-8">
                 <input type="email" placeholder="Your email address"
                     class="flex-1 px-5 py-3 rounded-full border border-sourdough-gold/40 bg-sourdough-cream dark:bg-sourdough-dark/60 focus:outline-none focus:border-sourdough-gold text-sm">
                 <button onclick="alert('Thanks! We\'ll send you our recipe submission form.')"
-                    class="bg-sourdough-gold hover:bg-sourdough-deep text-white px-8 py-3 rounded-full text-xs uppercase tracking-widest font-bold transition shadow-md">Submit
+                    class="bg-sourdough-gold hover:bg-sourdough-gold/90 text-white px-8 py-3 rounded-full text-xs uppercase tracking-widest font-bold transition shadow-md">Submit
                     Recipe →</button>
             </div>
             <div
-                class="pt-6 border-t border-sourdough-gold/20 flex justify-center gap-8 text-sm text-sourdough-deep dark:text-sourdough-warm/70">
+                class="pt-6 border-t border-sourdough-gold/20 flex justify-center gap-8 text-sm text-sourdough-gold dark:text-sourdough-warm/80">
                 <span><i class="fas fa-download text-sourdough-gold"></i> Free Recipe Book</span>
                 <span><i class="fas fa-envelope text-sourdough-gold"></i> Weekly Newsletter</span>
                 <span><i class="fas fa-star text-sourdough-gold"></i> 150+ Free Recipes</span>
@@ -603,7 +611,7 @@
                     <div class="flex items-center gap-2 mb-5">
                         <a href="index.html" class="flex items-center gap-2 group">
                             <i
-                                class="fas fa-wheat-alt text-2xl text-sourdough-gold group-hover:text-sourdough-deep transition-colors"></i>
+                                class="fas fa-wheat-alt text-2xl text-sourdough-gold group-hover:text-sourdough-gold/85 transition-colors"></i>
                             <span class="text-2xl font-serif font-bold text-sourdough-gold tracking-wide">Sourdough
                                 Lab</span>
                         </a>

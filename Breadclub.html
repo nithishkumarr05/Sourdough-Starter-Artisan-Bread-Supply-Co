@@ -23,7 +23,7 @@
                 extend: {
                     colors: {
                         'sourdough-gold': '#C9A03D',
-                        'sourdough-deep': '#8B5E3C',
+                        'sourdough-deep': '#4A2E1B',
                         'sourdough-cream': '#FDF8F0',
                         'sourdough-warm': '#F5E6D3',
                         'sourdough-brown': '#5C3A21',
@@ -247,17 +247,23 @@
 
                 <div class="hidden xl:flex items-center gap-3">
                     <button id="themeToggle"
-                        class="w-9 h-9 rounded-full border border-sourdough-gold/40 flex items-center justify-center hover:bg-sourdough-gold/10 transition"><i
-                            class="fas fa-moon text-sourdough-gold text-sm"></i></button>
+                        class="w-9 h-9 rounded-full border border-sourdough-gold/40 flex items-center justify-center hover:bg-sourdough-gold/10 transition"
+                        title="Toggle Theme">
+                        <i class="fas fa-moon text-sourdough-gold text-sm"></i>
+                    </button>
                     <button id="rtlToggle"
-                        class="w-9 h-9 rounded-full border border-sourdough-gold/40 flex items-center justify-center hover:bg-sourdough-gold/10 transition"><i
-                            class="fas fa-exchange-alt text-sourdough-gold text-sm"></i></button>
-                    <a href="#"
-                        class="flex items-center gap-2 text-sourdough-dark dark:text-white hover:text-sourdough-gold transition font-medium text-sm"><i
-                            class="fas fa-user-circle text-lg"></i> Login</a>
-                    <a href="#"
-                        class="flex items-center gap-2 bg-sourdough-gold hover:bg-sourdough-deep text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition shadow-md"><i
-                            class="fas fa-user-plus text-sm"></i> Sign Up</a>
+                        class="w-9 h-9 rounded-full border border-sourdough-gold/40 flex items-center justify-center hover:bg-sourdough-gold/10 transition"
+                        title="RTL Mode">
+                        <i class="fas fa-exchange-alt text-sourdough-gold text-sm"></i>
+                    </button>
+                    <a href="login.html"
+                        class="flex items-center gap-2 border border-sourdough-gold text-sourdough-gold hover:bg-sourdough-gold hover:text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition shadow-sm">
+                        <i class="fas fa-user-circle text-sm"></i> Login
+                    </a>
+                    <a href="signup.html"
+                        class="flex items-center gap-2 bg-sourdough-gold hover:bg-sourdough-deep text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition shadow-md">
+                        <i class="fas fa-user-plus text-sm"></i> Sign Up
+                    </a>
                 </div>
 
                 <div class="xl:hidden flex items-center gap-3">
@@ -309,18 +315,18 @@
                 <div class="pt-5 mt-5 border-t border-sourdough-gold/20">
                     <div class="grid grid-cols-2 gap-3 mb-4">
                         <button id="mobileThemeToggle"
-                            class="bg-sourdough-gold/10 dark:bg-sourdough-gold/20 px-4 py-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2"><i
-                                class="fas fa-moon"></i> Dark/Light</button>
+                            class="bg-sourdough-gold/10 dark:bg-sourdough-gold/20 px-4 py-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 text-sourdough-dark dark:text-sourdough-warm"><i
+                                class="fas fa-moon text-sm"></i> Dark/Light</button>
                         <button id="mobileRtlToggle"
-                            class="bg-sourdough-gold/10 dark:bg-sourdough-gold/20 px-4 py-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2"><i
-                                class="fas fa-exchange-alt"></i> RTL</button>
+                            class="bg-sourdough-gold/10 dark:bg-sourdough-gold/20 px-4 py-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 text-sourdough-dark dark:text-sourdough-warm"><i
+                                class="fas fa-exchange-alt text-sm"></i> RTL</button>
                     </div>
-                    <a href="#"
-                        class="flex items-center justify-center gap-2 bg-sourdough-dark text-white text-center px-4 py-3.5 rounded-xl text-sm font-semibold uppercase"><i
-                            class="fas fa-user-circle"></i> Login</a>
-                    <a href="#"
+                    <a href="login.html"
+                        class="flex items-center justify-center gap-2 border border-sourdough-gold text-sourdough-gold hover:bg-sourdough-gold hover:text-white text-center px-4 py-3.5 rounded-xl text-sm font-semibold uppercase transition"><i
+                            class="fas fa-user-circle text-sm"></i> Login</a>
+                    <a href="signup.html"
                         class="flex items-center justify-center gap-2 mt-3 bg-sourdough-gold text-white text-center px-4 py-3.5 rounded-xl text-sm font-semibold uppercase"><i
-                            class="fas fa-user-plus"></i> Sign Up</a>
+                            class="fas fa-user-plus text-sm"></i> Sign Up</a>
                 </div>
             </div>
         </div>
@@ -332,7 +338,7 @@
 
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
-            <img src="" alt="Artisan Bread Club"
+            <img src="assests/homeb.jpg" alt="Artisan Bread Club"
                 class="w-full h-full object-cover opacity-20 dark:opacity-10 mix-blend-overlay">
             <div class="absolute inset-0 opacity-10 dark:opacity-20">
                 <svg class="w-full h-full" viewBox="0 0 200 200">
@@ -505,10 +511,8 @@
                         Peek</span>
                     <h2
                         class="text-3xl md:text-4xl font-serif font-bold text-sourdough-dark dark:text-sourdough-warm mb-4">
-                        June 2026: Heritage Grains</h2>
-                    <p class="text-sourdough-deep dark:text-sourdough-warm/80 leading-relaxed mb-5">This month's Artisan
-                        box features a 120-year-old Sonora wheat starter, freshly milled Red Fife flour, a handcrafted
-                        linen banneton, and our "Ancient Grains" baking guide.</p>
+                        Inside the Sourdough Lab Box</h2>
+                    <p class="text-sourdough-deep dark:text-sourdough-warm/80 leading-relaxed mb-5">Every month, we curate a premium selection of heirloom starters, organic stone-ground flours, specialty tools, and master-level recipes. Designed to elevate your home baking journey, each Sourdough Lab Box brings the bakery experience straight to your kitchen.</p>
                     <div class="flex items-center gap-4">
                         <div>
                             <div class="text-2xl font-bold text-sourdough-gold">$49</div>

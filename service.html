@@ -23,7 +23,7 @@
                 extend: {
                     colors: {
                         'sourdough-gold': '#C9A03D',
-                        'sourdough-deep': '#8B5E3C',
+                        'sourdough-deep': '#4A2E1B',
                         'sourdough-cream': '#FDF8F0',
                         'sourdough-warm': '#F5E6D3',
                         'sourdough-brown': '#5C3A21',
@@ -246,8 +246,8 @@
                         <i class="fas fa-exchange-alt text-sourdough-gold text-sm"></i>
                     </button>
                     <a href="login.html"
-                        class="flex items-center gap-2 text-sourdough-dark dark:text-white hover:text-sourdough-gold transition font-medium text-sm">
-                        <i class="fas fa-user-circle text-lg"></i> Login
+                        class="flex items-center gap-2 border border-sourdough-gold text-sourdough-gold hover:bg-sourdough-gold hover:text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition shadow-sm">
+                        <i class="fas fa-user-circle text-sm"></i> Login
                     </a>
                     <a href="signup.html"
                         class="flex items-center gap-2 bg-sourdough-gold hover:bg-sourdough-deep text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition shadow-md">
@@ -307,18 +307,18 @@
                 <div class="pt-5 mt-5 border-t border-sourdough-gold/20">
                     <div class="grid grid-cols-2 gap-3 mb-4">
                         <button id="mobileThemeToggle"
-                            class="bg-sourdough-gold/10 dark:bg-sourdough-gold/20 px-4 py-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2"><i
-                                class="fas fa-moon"></i> Dark/Light</button>
+                            class="bg-sourdough-gold/10 dark:bg-sourdough-gold/20 px-4 py-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 text-sourdough-dark dark:text-sourdough-warm"><i
+                                class="fas fa-moon text-sm"></i> Dark/Light</button>
                         <button id="mobileRtlToggle"
-                            class="bg-sourdough-gold/10 dark:bg-sourdough-gold/20 px-4 py-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2"><i
-                                class="fas fa-exchange-alt"></i> RTL</button>
+                            class="bg-sourdough-gold/10 dark:bg-sourdough-gold/20 px-4 py-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 text-sourdough-dark dark:text-sourdough-warm"><i
+                                class="fas fa-exchange-alt text-sm"></i> RTL</button>
                     </div>
                     <a href="login.html"
-                        class="flex items-center justify-center gap-2 bg-sourdough-dark text-white text-center px-4 py-3.5 rounded-xl text-sm font-semibold uppercase"><i
-                            class="fas fa-user-circle"></i> Login</a>
+                        class="flex items-center justify-center gap-2 border border-sourdough-gold text-sourdough-gold hover:bg-sourdough-gold hover:text-white text-center px-4 py-3.5 rounded-xl text-sm font-semibold uppercase transition"><i
+                            class="fas fa-user-circle text-sm"></i> Login</a>
                     <a href="signup.html"
                         class="flex items-center justify-center gap-2 mt-3 bg-sourdough-gold text-white text-center px-4 py-3.5 rounded-xl text-sm font-semibold uppercase"><i
-                            class="fas fa-user-plus"></i> Sign Up</a>
+                            class="fas fa-user-plus text-sm"></i> Sign Up</a>
                 </div>
             </div>
         </div>
@@ -330,7 +330,7 @@
 
         <!-- Background Image with Overlay (Theme extension) -->
         <div class="absolute inset-0 z-0">
-            <img src="" alt="Artisan Sourdough Services"
+            <img src="assests/res4.jpg" alt="Artisan Sourdough Services"
                 class="w-full h-full object-cover opacity-20 dark:opacity-10 mix-blend-overlay">
             <div class="absolute inset-0 opacity-10 dark:opacity-20">
                 <svg class="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -361,7 +361,35 @@
         </div>
     </section>
 
-    <!-- SECTION 2: Core Services Grid (4 Cards) -->
+    <!-- SECTION 2: Service Stats -->
+    <section class="py-16 bg-sourdough-warm/20 dark:bg-sourdough-brown/10 border-b border-sourdough-gold/20">
+        <div class="max-w-7xl mx-auto px-5 text-center">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <div>
+                    <div class="text-4xl md:text-5xl font-black text-sourdough-gold font-serif">150+</div>
+                    <p class="text-xs uppercase tracking-wider text-sourdough-deep dark:text-sourdough-warm/70 mt-2">
+                        Consultations Completed</p>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-black text-sourdough-gold font-serif">25+</div>
+                    <p class="text-xs uppercase tracking-wider text-sourdough-deep dark:text-sourdough-warm/70 mt-2">Partner
+                        Bakeries</p>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-black text-sourdough-gold font-serif">500+</div>
+                    <p class="text-xs uppercase tracking-wider text-sourdough-deep dark:text-sourdough-warm/70 mt-2">Workshop
+                        Attendees</p>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-black text-sourdough-gold font-serif">100%</div>
+                    <p class="text-xs uppercase tracking-wider text-sourdough-deep dark:text-sourdough-warm/70 mt-2">
+                        Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Core Services Grid (4 Cards) -->
     <section class="py-20 lg:py-28 bg-white dark:bg-sourdough-dark/50">
         <div class="max-w-7xl mx-auto px-5">
             <div class="text-center mb-14">
@@ -560,41 +588,19 @@
         </div>
     </section>
 
-    <!-- SECTION 6: Service Stats + Consultation CTA -->
+    <!-- SECTION 7: Consultation CTA -->
     <section class="py-20 lg:py-28 bg-white dark:bg-sourdough-dark/50">
         <div class="max-w-5xl mx-auto px-5 text-center">
-            <div class="grid md:grid-cols-4 gap-6 mb-12">
-                <div>
-                    <div class="text-3xl md:text-4xl font-black text-sourdough-gold">150+</div>
-                    <p class="text-xs uppercase tracking-wider text-sourdough-deep dark:text-sourdough-warm/70">
-                        Consultations Completed</p>
-                </div>
-                <div>
-                    <div class="text-3xl md:text-4xl font-black text-sourdough-gold">25+</div>
-                    <p class="text-xs uppercase tracking-wider text-sourdough-deep dark:text-sourdough-warm/70">Partner
-                        Bakeries</p>
-                </div>
-                <div>
-                    <div class="text-3xl md:text-4xl font-black text-sourdough-gold">500+</div>
-                    <p class="text-xs uppercase tracking-wider text-sourdough-deep dark:text-sourdough-warm/70">Workshop
-                        Attendees</p>
-                </div>
-                <div>
-                    <div class="text-3xl md:text-4xl font-black text-sourdough-gold">100%</div>
-                    <p class="text-xs uppercase tracking-wider text-sourdough-deep dark:text-sourdough-warm/70">
-                        Satisfaction Rate</p>
-                </div>
-            </div>
             <div
                 class="bg-sourdough-warm/40 dark:bg-sourdough-brown/10 rounded-3xl p-8 md:p-12 border border-sourdough-gold/20">
                 <i class="fas fa-comments text-4xl text-sourdough-gold mb-4"></i>
                 <h3 class="text-2xl md:text-3xl font-serif font-bold text-sourdough-dark dark:text-sourdough-warm mb-3">
                     Need a Custom Solution?</h3>
-                <p class="text-sourdough-deep dark:text-sourdough-warm/80 max-w-xl mx-auto mb-6">Not seeing exactly what
+                <p class="text-sourdough-dark/80 dark:text-sourdough-warm/80 max-w-xl mx-auto mb-6">Not seeing exactly what
                     you're looking for? We offer fully customized services for bakeries, restaurants, and baking
                     enthusiasts.</p>
                 <a href="#"
-                    class="inline-block bg-sourdough-gold hover:bg-sourdough-deep text-white px-8 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold transition shadow-lg">Schedule
+                    class="inline-block bg-sourdough-gold hover:bg-sourdough-gold/90 text-white px-8 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold transition shadow-lg">Schedule
                     Free Consultation →</a>
             </div>
         </div>
@@ -606,14 +612,14 @@
         <div class="max-w-[1400px] mx-auto px-5 relative z-10">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
                 <div class="lg:col-span-5">
-                    <div class="flex items-center gap-2 mb-5">
+                     <div class="flex items-center gap-2 mb-5">
                         <a href="index.html" class="flex items-center gap-2 group">
-                            <i
-                                class="fas fa-wheat-alt text-2xl text-sourdough-gold group-hover:text-sourdough-deep transition-colors"></i>
+                             <i
+                                 class="fas fa-wheat-alt text-2xl text-sourdough-gold group-hover:text-sourdough-gold/85 transition-colors"></i>
                             <span class="text-2xl font-serif font-bold text-sourdough-gold tracking-wide">Sourdough
-                                Lab</span>
+                                 Lab</span>
                         </a>
-                    </div>
+                     </div>
                     <p class="text-gray-300 text-sm max-w-md leading-relaxed">Heirloom starters, organic flours, and
                         artisan tools — since 2019. Nurturing wild yeast cultures for bakers worldwide.</p>
                     <div class="flex gap-4 mt-6">
